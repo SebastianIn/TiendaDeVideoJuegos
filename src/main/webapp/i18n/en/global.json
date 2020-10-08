@@ -9,6 +9,7 @@
         "main": "Entities",
         "cliente": "Cliente",
         "juego": "Juego",
+        "tarifas": "Tarifas",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

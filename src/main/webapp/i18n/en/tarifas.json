@@ -1,0 +1,23 @@
+{
+  "tIendaDeVideoJuegosApp": {
+    "tarifas": {
+      "home": {
+        "title": "Tarifas",
+        "createLabel": "Create a new Tarifas",
+        "createOrEditLabel": "Create or edit a Tarifas",
+        "notFound": "No Tarifas found"
+      },
+      "created": "A new Tarifas is created with identifier {{ param }}",
+      "updated": "A Tarifas is updated with identifier {{ param }}",
+      "deleted": "A Tarifas is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tarifas {{ id }}?"
+      },
+      "detail": {
+        "title": "Tarifas"
+      },
+      "precio": "Precio",
+      "juego": "Juego"
+    }
+  }
+}

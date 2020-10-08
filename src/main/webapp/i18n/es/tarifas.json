@@ -1,0 +1,23 @@
+{
+  "tIendaDeVideoJuegosApp": {
+    "tarifas": {
+      "home": {
+        "title": "Tarifas",
+        "createLabel": "Crear nuevo Tarifas",
+        "createOrEditLabel": "Crear o editar Tarifas",
+        "notFound": "Ningún Tarifas encontrado"
+      },
+      "created": "Un nuevo Tarifas ha sido creado con el identificador {{ param }}",
+      "updated": "Un Tarifas ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Tarifas ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Tarifas {{ id }}?"
+      },
+      "detail": {
+        "title": "Tarifas"
+      },
+      "precio": "Precio",
+      "juego": "Juego"
+    }
+  }
+}

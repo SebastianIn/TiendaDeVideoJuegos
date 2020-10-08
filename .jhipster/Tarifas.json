@@ -1,0 +1,30 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "juego",
+      "otherEntityName": "juego",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "nombre",
+      "ownerSide": true,
+      "useJPADerivedIdentifier": false,
+      "otherEntityRelationshipName": "tarifas"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "precio",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "changelogDate": "20201008215542",
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "tarifas",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination"
+}
