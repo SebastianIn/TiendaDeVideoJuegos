@@ -8,6 +8,10 @@ import { RouterModule } from '@angular/router';
         path: 'cliente',
         loadChildren: () => import('./cliente/cliente.module').then(m => m.TIendaDeVideoJuegosClienteModule),
       },
+      {
+        path: 'juego',
+        loadChildren: () => import('./juego/juego.module').then(m => m.TIendaDeVideoJuegosJuegoModule),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],

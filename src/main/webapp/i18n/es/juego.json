@@ -1,0 +1,27 @@
+{
+  "tIendaDeVideoJuegosApp": {
+    "juego": {
+      "home": {
+        "title": "Juegos",
+        "createLabel": "Crear nuevo Juego",
+        "createOrEditLabel": "Crear o editar Juego",
+        "notFound": "Ningún Juegos encontrado"
+      },
+      "created": "Un nuevo Juego ha sido creado con el identificador {{ param }}",
+      "updated": "Un Juego ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Juego ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Juego {{ id }}?"
+      },
+      "detail": {
+        "title": "Juego"
+      },
+      "nombre": "Nombre",
+      "fechaPublicacion": "Fecha Publicacion",
+      "protagonistas": "Protagonistas",
+      "director": "Director",
+      "productor": "Productor",
+      "tecnologia": "Tecnologia"
+    }
+  }
+}

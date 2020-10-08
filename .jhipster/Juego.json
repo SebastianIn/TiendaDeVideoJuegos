@@ -1,0 +1,40 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [],
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fechaPublicacion",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "protagonistas",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "director",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "productor",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tecnologia",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20201008205703",
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "juego",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination"
+}
