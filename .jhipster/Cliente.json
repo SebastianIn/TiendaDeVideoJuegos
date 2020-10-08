@@ -1,0 +1,36 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [],
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "apellido",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cedula",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fechaNacimiento",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "rangoEdad",
+      "fieldType": "Integer"
+    }
+  ],
+  "changelogDate": "20201008203553",
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "cliente",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination"
+}
