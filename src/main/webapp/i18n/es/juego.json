@@ -5,7 +5,14 @@
         "title": "Juegos",
         "createLabel": "Crear nuevo Juego",
         "createOrEditLabel": "Crear o editar Juego",
-        "notFound": "Ningún Juegos encontrado"
+        "notFound": "Ningún Juegos encontrado",
+        "filters": "Filtros de Busqueda"
+      },
+      "filters": {
+        "name": "Filtrar por nombre:        ",
+        "director": "Filtrar por director:     ",
+        "protagonist": "Filtrar por protagonista: ",
+        "producer": "Filtrar por productor:    "
       },
       "created": "Un nuevo Juego ha sido creado con el identificador {{ param }}",
       "updated": "Un Juego ha sido actualizado con el identificador {{ param }}",

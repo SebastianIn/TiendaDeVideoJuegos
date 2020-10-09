@@ -5,7 +5,8 @@
         "title": "Clientes",
         "createLabel": "Create a new Cliente",
         "createOrEditLabel": "Create or edit a Cliente",
-        "notFound": "No Clientes found"
+        "notFound": "No Clientes found",
+        "filters": "Search Filters"
       },
       "created": "A new Cliente is created with identifier {{ param }}",
       "updated": "A Cliente is updated with identifier {{ param }}",

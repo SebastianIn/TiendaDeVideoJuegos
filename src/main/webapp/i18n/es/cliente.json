@@ -5,7 +5,8 @@
         "title": "Clientes",
         "createLabel": "Crear nuevo Cliente",
         "createOrEditLabel": "Crear o editar Cliente",
-        "notFound": "Ningún Clientes encontrado"
+        "notFound": "Ningún Clientes encontrado",
+        "filters": "Filtros de Busqueda"
       },
       "created": "Un nuevo Cliente ha sido creado con el identificador {{ param }}",
       "updated": "Un Cliente ha sido actualizado con el identificador {{ param }}",
