@@ -38,6 +38,13 @@ public interface ClienteService {
     Optional<ClienteDTO> findOne(Long id);
 
     /**
+     * Get the "cedula" cliente.
+     * @param cedula - cedula del cliente
+     * @return the entity.
+     */
+    Optional<ClienteDTO> findOneByCedula(String cedula);
+
+    /**
      * Delete the "id" cliente.
      *
      * @param id the id of the entity.

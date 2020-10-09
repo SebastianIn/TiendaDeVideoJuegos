@@ -59,6 +59,13 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
+    @Transactional(readOnly = true)
+    public Optional<ClienteDTO> findOneByCedula(String cedula){
+        log.debug("Request to get Cliente by cedula: {}", cedula);
+        return clienteRepository.findByCedula(cedula)
+            .map(clienteMapper::toDto);
+    }
+    @Override
     public void delete(Long id) {
         log.debug("Request to delete Cliente : {}", id);
         clienteRepository.deleteById(id);

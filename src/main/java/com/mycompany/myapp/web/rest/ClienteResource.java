@@ -111,6 +111,19 @@ public class ClienteResource {
     }
 
     /**
+     * {@code GET  /clientes/:id} : get the "id" cliente.
+     *
+     * @param id the id of the clienteDTO to retrieve.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the clienteDTO, or with status {@code 404 (Not Found)}.
+     */
+    @GetMapping("/clientes/cedula/{cedula}")
+    public ResponseEntity<ClienteDTO> getClienteByCedula(@PathVariable String cedula) {
+        log.debug("REST request to get Cliente by cedula: {}", cedula);
+        Optional<ClienteDTO> clienteDTO = clienteService.findOneByCedula(cedula);
+        return ResponseUtil.wrapOrNotFound(clienteDTO);
+    }
+
+    /**
      * {@code DELETE  /clientes/:id} : delete the "id" cliente.
      *
      * @param id the id of the clienteDTO to delete.
