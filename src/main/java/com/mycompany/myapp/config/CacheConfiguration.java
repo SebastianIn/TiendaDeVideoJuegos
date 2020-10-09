@@ -53,6 +53,7 @@ public class CacheConfiguration {
             createCache(cm, com.mycompany.myapp.domain.Tarifas.class.getName());
             createCache(cm, com.mycompany.myapp.domain.Alquiler.class.getName());
             createCache(cm, com.mycompany.myapp.domain.Alquiler.class.getName() + ".juegos");
+            createCache(cm, com.mycompany.myapp.domain.Inventario.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

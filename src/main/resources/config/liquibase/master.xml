@@ -18,9 +18,11 @@
     <include file="config/liquibase/changelog/20201008205703_added_entity_Juego.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201008215542_added_entity_Tarifas.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201009020708_added_entity_Alquiler.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201009031053_added_entity_Inventario.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20201008215542_added_entity_constraints_Tarifas.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201009020708_added_entity_constraints_Alquiler.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201009031053_added_entity_constraints_Inventario.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

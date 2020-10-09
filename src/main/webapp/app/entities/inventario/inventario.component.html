@@ -1,0 +1,81 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="tIendaDeVideoJuegosApp.inventario.home.title">Inventarios</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-inventario" [routerLink]="['/inventario/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="tIendaDeVideoJuegosApp.inventario.home.createLabel">
+            Create a new Inventario
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="inventarios?.length === 0">
+        <span jhiTranslate="tIendaDeVideoJuegosApp.inventario.home.notFound">No inventarios found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="inventarios && inventarios.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="total"><span jhiTranslate="tIendaDeVideoJuegosApp.inventario.total">Total</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="disponibles"><span jhiTranslate="tIendaDeVideoJuegosApp.inventario.disponibles">Disponibles</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="enAlquiler"><span jhiTranslate="tIendaDeVideoJuegosApp.inventario.enAlquiler">En Alquiler</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="juegoNombre"><span jhiTranslate="tIendaDeVideoJuegosApp.inventario.juego">Juego</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let inventario of inventarios ;trackBy: trackId">
+                    <td><a [routerLink]="['/inventario', inventario.id, 'view']">{{ inventario.id }}</a></td>
+                    <td>{{ inventario.total }}</td>
+                    <td>{{ inventario.disponibles }}</td>
+                    <td>{{ inventario.enAlquiler }}</td>
+                    <td>
+                        <div *ngIf="inventario.juegoId">
+                            <a [routerLink]="['/juego', inventario.juegoId , 'view']" >{{ inventario.juegoNombre }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/inventario', inventario.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/inventario', inventario.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(inventario)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="inventarios && inventarios.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

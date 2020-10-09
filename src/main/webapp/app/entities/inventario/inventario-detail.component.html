@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="inventario">
+            <h2><span jhiTranslate="tIendaDeVideoJuegosApp.inventario.detail.title">Inventario</span> {{ inventario.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="tIendaDeVideoJuegosApp.inventario.total">Total</span></dt>
+                <dd>
+                    <span>{{ inventario.total }}</span>
+                </dd>
+                <dt><span jhiTranslate="tIendaDeVideoJuegosApp.inventario.disponibles">Disponibles</span></dt>
+                <dd>
+                    <span>{{ inventario.disponibles }}</span>
+                </dd>
+                <dt><span jhiTranslate="tIendaDeVideoJuegosApp.inventario.enAlquiler">En Alquiler</span></dt>
+                <dd>
+                    <span>{{ inventario.enAlquiler }}</span>
+                </dd>
+                <dt><span jhiTranslate="tIendaDeVideoJuegosApp.inventario.juego">Juego</span></dt>
+                <dd>
+                    <div *ngIf="inventario.juegoId">
+                        <a [routerLink]="['/juego', inventario.juegoId, 'view']">{{ inventario.juegoNombre }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/inventario', inventario.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
