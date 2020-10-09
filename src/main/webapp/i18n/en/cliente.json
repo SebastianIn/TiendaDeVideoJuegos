@@ -20,7 +20,10 @@
       "apellido": "Apellido",
       "cedula": "Cedula",
       "fechaNacimiento": "Fecha Nacimiento",
-      "rangoEdad": "Rango Edad"
+      "rangoEdad": "Rango Edad",
+      "telefono": "Telefono",
+      "correo": "Correo",
+      "direccion": "Direccion"
     }
   }
 }

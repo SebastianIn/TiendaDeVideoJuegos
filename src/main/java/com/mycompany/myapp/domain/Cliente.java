@@ -38,6 +38,15 @@ public class Cliente implements Serializable {
     @Column(name = "rango_edad")
     private Integer rangoEdad;
 
+    @Column(name = "telefono")
+    private String telefono;
+
+    @Column(name = "correo")
+    private String correo;
+
+    @Column(name = "direccion")
+    private String direccion;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
@@ -111,6 +120,45 @@ public class Cliente implements Serializable {
     public void setRangoEdad(Integer rangoEdad) {
         this.rangoEdad = rangoEdad;
     }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public Cliente telefono(String telefono) {
+        this.telefono = telefono;
+        return this;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public Cliente correo(String correo) {
+        this.correo = correo;
+        return this;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public Cliente direccion(String direccion) {
+        this.direccion = direccion;
+        return this;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -139,6 +187,9 @@ public class Cliente implements Serializable {
             ", cedula='" + getCedula() + "'" +
             ", fechaNacimiento='" + getFechaNacimiento() + "'" +
             ", rangoEdad=" + getRangoEdad() +
+            ", telefono='" + getTelefono() + "'" +
+            ", correo='" + getCorreo() + "'" +
+            ", direccion='" + getDireccion() + "'" +
             "}";
     }
 }

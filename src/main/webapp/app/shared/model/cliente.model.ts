@@ -7,6 +7,9 @@ export interface ICliente {
   cedula?: string;
   fechaNacimiento?: Moment;
   rangoEdad?: number;
+  telefono?: string;
+  correo?: string;
+  direccion?: string;
 }
 
 export class Cliente implements ICliente {
@@ -16,6 +19,9 @@ export class Cliente implements ICliente {
     public apellido?: string,
     public cedula?: string,
     public fechaNacimiento?: Moment,
-    public rangoEdad?: number
+    public rangoEdad?: number,
+    public telefono?: string,
+    public correo?: string,
+    public direccion?: string
   ) {}
 }

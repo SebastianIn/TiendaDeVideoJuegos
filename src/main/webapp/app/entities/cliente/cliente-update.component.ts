@@ -23,6 +23,9 @@ export class ClienteUpdateComponent implements OnInit {
     cedula: [],
     fechaNacimiento: [],
     rangoEdad: [],
+    telefono: [],
+    correo: [],
+    direccion: [],
   });
 
   constructor(protected clienteService: ClienteService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
@@ -41,6 +44,9 @@ export class ClienteUpdateComponent implements OnInit {
       cedula: cliente.cedula,
       fechaNacimiento: cliente.fechaNacimiento,
       rangoEdad: cliente.rangoEdad,
+      telefono: cliente.telefono,
+      correo: cliente.correo,
+      direccion: cliente.direccion,
     });
   }
 
@@ -67,6 +73,9 @@ export class ClienteUpdateComponent implements OnInit {
       cedula: this.editForm.get(['cedula'])!.value,
       fechaNacimiento: this.editForm.get(['fechaNacimiento'])!.value,
       rangoEdad: this.editForm.get(['rangoEdad'])!.value,
+      telefono: this.editForm.get(['telefono'])!.value,
+      correo: this.editForm.get(['correo'])!.value,
+      direccion: this.editForm.get(['direccion'])!.value,
     };
   }
 

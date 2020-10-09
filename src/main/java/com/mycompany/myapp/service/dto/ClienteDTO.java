@@ -20,6 +20,12 @@ public class ClienteDTO implements Serializable {
 
     private Integer rangoEdad;
 
+    private String telefono;
+
+    private String correo;
+
+    private String direccion;
+
     
     public Long getId() {
         return id;
@@ -69,6 +75,30 @@ public class ClienteDTO implements Serializable {
         this.rangoEdad = rangoEdad;
     }
 
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -96,6 +126,9 @@ public class ClienteDTO implements Serializable {
             ", cedula='" + getCedula() + "'" +
             ", fechaNacimiento='" + getFechaNacimiento() + "'" +
             ", rangoEdad=" + getRangoEdad() +
+            ", telefono='" + getTelefono() + "'" +
+            ", correo='" + getCorreo() + "'" +
+            ", direccion='" + getDireccion() + "'" +
             "}";
     }
 }

@@ -28,6 +28,9 @@
                     <th scope="col"  jhiSortBy="cedula"><span jhiTranslate="tIendaDeVideoJuegosApp.cliente.cedula">Cedula</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="fechaNacimiento"><span jhiTranslate="tIendaDeVideoJuegosApp.cliente.fechaNacimiento">Fecha Nacimiento</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="rangoEdad"><span jhiTranslate="tIendaDeVideoJuegosApp.cliente.rangoEdad">Rango Edad</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="telefono"><span jhiTranslate="tIendaDeVideoJuegosApp.cliente.telefono">Telefono</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="correo"><span jhiTranslate="tIendaDeVideoJuegosApp.cliente.correo">Correo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="direccion"><span jhiTranslate="tIendaDeVideoJuegosApp.cliente.direccion">Direccion</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -39,6 +42,9 @@
                     <td>{{ cliente.cedula }}</td>
                     <td>{{ cliente.fechaNacimiento | date:'mediumDate' }}</td>
                     <td>{{ cliente.rangoEdad }}</td>
+                    <td>{{ cliente.telefono }}</td>
+                    <td>{{ cliente.correo }}</td>
+                    <td>{{ cliente.direccion }}</td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"

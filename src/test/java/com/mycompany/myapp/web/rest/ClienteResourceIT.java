@@ -49,6 +49,15 @@ public class ClienteResourceIT {
     private static final Integer DEFAULT_RANGO_EDAD = 1;
     private static final Integer UPDATED_RANGO_EDAD = 2;
 
+    private static final String DEFAULT_TELEFONO = "AAAAAAAAAA";
+    private static final String UPDATED_TELEFONO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_CORREO = "AAAAAAAAAA";
+    private static final String UPDATED_CORREO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_DIRECCION = "AAAAAAAAAA";
+    private static final String UPDATED_DIRECCION = "BBBBBBBBBB";
+
     @Autowired
     private ClienteRepository clienteRepository;
 
@@ -78,7 +87,10 @@ public class ClienteResourceIT {
             .apellido(DEFAULT_APELLIDO)
             .cedula(DEFAULT_CEDULA)
             .fechaNacimiento(DEFAULT_FECHA_NACIMIENTO)
-            .rangoEdad(DEFAULT_RANGO_EDAD);
+            .rangoEdad(DEFAULT_RANGO_EDAD)
+            .telefono(DEFAULT_TELEFONO)
+            .correo(DEFAULT_CORREO)
+            .direccion(DEFAULT_DIRECCION);
         return cliente;
     }
     /**
@@ -93,7 +105,10 @@ public class ClienteResourceIT {
             .apellido(UPDATED_APELLIDO)
             .cedula(UPDATED_CEDULA)
             .fechaNacimiento(UPDATED_FECHA_NACIMIENTO)
-            .rangoEdad(UPDATED_RANGO_EDAD);
+            .rangoEdad(UPDATED_RANGO_EDAD)
+            .telefono(UPDATED_TELEFONO)
+            .correo(UPDATED_CORREO)
+            .direccion(UPDATED_DIRECCION);
         return cliente;
     }
 
@@ -122,6 +137,9 @@ public class ClienteResourceIT {
         assertThat(testCliente.getCedula()).isEqualTo(DEFAULT_CEDULA);
         assertThat(testCliente.getFechaNacimiento()).isEqualTo(DEFAULT_FECHA_NACIMIENTO);
         assertThat(testCliente.getRangoEdad()).isEqualTo(DEFAULT_RANGO_EDAD);
+        assertThat(testCliente.getTelefono()).isEqualTo(DEFAULT_TELEFONO);
+        assertThat(testCliente.getCorreo()).isEqualTo(DEFAULT_CORREO);
+        assertThat(testCliente.getDireccion()).isEqualTo(DEFAULT_DIRECCION);
     }
 
     @Test
@@ -160,7 +178,10 @@ public class ClienteResourceIT {
             .andExpect(jsonPath("$.[*].apellido").value(hasItem(DEFAULT_APELLIDO)))
             .andExpect(jsonPath("$.[*].cedula").value(hasItem(DEFAULT_CEDULA)))
             .andExpect(jsonPath("$.[*].fechaNacimiento").value(hasItem(DEFAULT_FECHA_NACIMIENTO.toString())))
-            .andExpect(jsonPath("$.[*].rangoEdad").value(hasItem(DEFAULT_RANGO_EDAD)));
+            .andExpect(jsonPath("$.[*].rangoEdad").value(hasItem(DEFAULT_RANGO_EDAD)))
+            .andExpect(jsonPath("$.[*].telefono").value(hasItem(DEFAULT_TELEFONO)))
+            .andExpect(jsonPath("$.[*].correo").value(hasItem(DEFAULT_CORREO)))
+            .andExpect(jsonPath("$.[*].direccion").value(hasItem(DEFAULT_DIRECCION)));
     }
     
     @Test
@@ -178,7 +199,10 @@ public class ClienteResourceIT {
             .andExpect(jsonPath("$.apellido").value(DEFAULT_APELLIDO))
             .andExpect(jsonPath("$.cedula").value(DEFAULT_CEDULA))
             .andExpect(jsonPath("$.fechaNacimiento").value(DEFAULT_FECHA_NACIMIENTO.toString()))
-            .andExpect(jsonPath("$.rangoEdad").value(DEFAULT_RANGO_EDAD));
+            .andExpect(jsonPath("$.rangoEdad").value(DEFAULT_RANGO_EDAD))
+            .andExpect(jsonPath("$.telefono").value(DEFAULT_TELEFONO))
+            .andExpect(jsonPath("$.correo").value(DEFAULT_CORREO))
+            .andExpect(jsonPath("$.direccion").value(DEFAULT_DIRECCION));
     }
     @Test
     @Transactional
@@ -205,7 +229,10 @@ public class ClienteResourceIT {
             .apellido(UPDATED_APELLIDO)
             .cedula(UPDATED_CEDULA)
             .fechaNacimiento(UPDATED_FECHA_NACIMIENTO)
-            .rangoEdad(UPDATED_RANGO_EDAD);
+            .rangoEdad(UPDATED_RANGO_EDAD)
+            .telefono(UPDATED_TELEFONO)
+            .correo(UPDATED_CORREO)
+            .direccion(UPDATED_DIRECCION);
         ClienteDTO clienteDTO = clienteMapper.toDto(updatedCliente);
 
         restClienteMockMvc.perform(put("/api/clientes")
@@ -222,6 +249,9 @@ public class ClienteResourceIT {
         assertThat(testCliente.getCedula()).isEqualTo(UPDATED_CEDULA);
         assertThat(testCliente.getFechaNacimiento()).isEqualTo(UPDATED_FECHA_NACIMIENTO);
         assertThat(testCliente.getRangoEdad()).isEqualTo(UPDATED_RANGO_EDAD);
+        assertThat(testCliente.getTelefono()).isEqualTo(UPDATED_TELEFONO);
+        assertThat(testCliente.getCorreo()).isEqualTo(UPDATED_CORREO);
+        assertThat(testCliente.getDireccion()).isEqualTo(UPDATED_DIRECCION);
     }
 
     @Test
