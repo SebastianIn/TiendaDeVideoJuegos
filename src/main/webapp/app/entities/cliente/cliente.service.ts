@@ -38,6 +38,12 @@ export class ClienteService {
       .pipe(map((res: EntityResponseType) => this.convertDateFromServer(res)));
   }
 
+  findByCedula(cedula: string): Observable<EntityResponseType> {
+    return this.http
+      .get<ICliente>(`${this.resourceUrl}/cedula/${cedula}`, { observe: 'response' })
+      .pipe(map((res: EntityResponseType) => this.convertDateFromServer(res)));
+  }
+
   query(req?: any): Observable<EntityArrayResponseType> {
     const options = createRequestOption(req);
     return this.http
