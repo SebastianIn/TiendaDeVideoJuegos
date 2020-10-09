@@ -1,0 +1,26 @@
+{
+  "tIendaDeVideoJuegosApp": {
+    "alquiler": {
+      "home": {
+        "title": "Alquilers",
+        "createLabel": "Create a new Alquiler",
+        "createOrEditLabel": "Create or edit a Alquiler",
+        "notFound": "No Alquilers found"
+      },
+      "created": "A new Alquiler is created with identifier {{ param }}",
+      "updated": "A Alquiler is updated with identifier {{ param }}",
+      "deleted": "A Alquiler is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Alquiler {{ id }}?"
+      },
+      "detail": {
+        "title": "Alquiler"
+      },
+      "fecha": "Fecha",
+      "monto": "Monto",
+      "rangoEdadAlcomprar": "Rango Edad Alcomprar",
+      "cliente": "Cliente",
+      "juegos": "Juegos"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "cliente",
+      "otherEntityName": "cliente",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "cedula",
+      "otherEntityRelationshipName": "alquiler"
+    },
+    {
+      "relationshipName": "juegos",
+      "otherEntityName": "juego",
+      "relationshipType": "many-to-many",
+      "otherEntityField": "nombre",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "alquiler"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "fecha",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "monto",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "rangoEdadAlcomprar",
+      "fieldType": "Integer"
+    }
+  ],
+  "changelogDate": "20201009020708",
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "alquiler",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination"
+}

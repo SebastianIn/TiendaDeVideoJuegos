@@ -16,6 +16,10 @@ import { RouterModule } from '@angular/router';
         path: 'tarifas',
         loadChildren: () => import('./tarifas/tarifas.module').then(m => m.TIendaDeVideoJuegosTarifasModule),
       },
+      {
+        path: 'alquiler',
+        loadChildren: () => import('./alquiler/alquiler.module').then(m => m.TIendaDeVideoJuegosAlquilerModule),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],

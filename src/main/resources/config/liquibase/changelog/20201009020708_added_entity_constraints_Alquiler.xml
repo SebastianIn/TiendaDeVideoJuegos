@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Alquiler.
+    -->
+    <changeSet id="20201009020708-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="cliente_id"
+                                 baseTableName="alquiler"
+                                 constraintName="fk_alquiler_cliente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cliente"/>
+
+        <addForeignKeyConstraint baseColumnNames="alquiler_id"
+                                 baseTableName="alquiler_juegos"
+                                 constraintName="fk_alquiler_juegos_alquiler_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="alquiler"/>
+
+        <addForeignKeyConstraint baseColumnNames="juegos_id"
+                                 baseTableName="alquiler_juegos"
+                                 constraintName="fk_alquiler_juegos_juegos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="juego"/>
+        
+    </changeSet>
+</databaseChangeLog>

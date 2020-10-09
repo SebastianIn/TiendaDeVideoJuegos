@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="alquiler">
+            <h2><span jhiTranslate="tIendaDeVideoJuegosApp.alquiler.detail.title">Alquiler</span> {{ alquiler.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="tIendaDeVideoJuegosApp.alquiler.fecha">Fecha</span></dt>
+                <dd>
+                    <span>{{ alquiler.fecha }}</span>
+                </dd>
+                <dt><span jhiTranslate="tIendaDeVideoJuegosApp.alquiler.monto">Monto</span></dt>
+                <dd>
+                    <span>{{ alquiler.monto }}</span>
+                </dd>
+                <dt><span jhiTranslate="tIendaDeVideoJuegosApp.alquiler.rangoEdadAlcomprar">Rango Edad Alcomprar</span></dt>
+                <dd>
+                    <span>{{ alquiler.rangoEdadAlcomprar }}</span>
+                </dd>
+                <dt><span jhiTranslate="tIendaDeVideoJuegosApp.alquiler.cliente">Cliente</span></dt>
+                <dd>
+                    <div *ngIf="alquiler.clienteId">
+                        <a [routerLink]="['/cliente', alquiler.clienteId, 'view']">{{ alquiler.clienteCedula }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="tIendaDeVideoJuegosApp.alquiler.juegos">Juegos</span></dt>
+                <dd>
+                    <span *ngFor="let juegos of alquiler.juegos; let last = last">
+                        <a [routerLink]="['/juego', juegos?.id, 'view']">{{ juegos.nombre }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/alquiler', alquiler.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
