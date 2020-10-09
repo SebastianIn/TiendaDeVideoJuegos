@@ -25,6 +25,8 @@ export class ClienteComponent implements OnInit, OnDestroy {
   ascending!: boolean;
   ngbPaginationPage = 1;
 
+  cedula!: string;
+
   constructor(
     protected clienteService: ClienteService,
     protected activatedRoute: ActivatedRoute,
@@ -35,7 +37,13 @@ export class ClienteComponent implements OnInit, OnDestroy {
 
   loadPage(page?: number, dontNavigate?: boolean): void {
     const pageToLoad: number = page || this.page || 1;
-
+    let req: any = {
+      page: pageToLoad - 1,
+      size: this.itemsPerPage,
+      sort: this.sort(),
+    };
+    if (this.nombreJuego) {
+    }
     this.clienteService
       .query({
         page: pageToLoad - 1,
@@ -95,6 +103,8 @@ export class ClienteComponent implements OnInit, OnDestroy {
     }
     return result;
   }
+
+  busquedaFiltrada(): void {}
 
   protected onSuccess(data: ICliente[] | null, headers: HttpHeaders, page: number, navigate: boolean): void {
     this.totalItems = Number(headers.get('X-Total-Count'));

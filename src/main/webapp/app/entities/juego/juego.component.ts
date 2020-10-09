@@ -25,6 +25,11 @@ export class JuegoComponent implements OnInit, OnDestroy {
   ascending!: boolean;
   ngbPaginationPage = 1;
 
+  nombreJuego!: string;
+  director!: string;
+  productor!: string;
+  protagonista!: string;
+
   constructor(
     protected juegoService: JuegoService,
     protected activatedRoute: ActivatedRoute,
@@ -95,6 +100,8 @@ export class JuegoComponent implements OnInit, OnDestroy {
     }
     return result;
   }
+
+  busquedaFiltrada(): void {}
 
   protected onSuccess(data: IJuego[] | null, headers: HttpHeaders, page: number, navigate: boolean): void {
     this.totalItems = Number(headers.get('X-Total-Count'));
