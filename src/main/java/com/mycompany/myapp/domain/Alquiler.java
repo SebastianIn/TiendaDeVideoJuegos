@@ -118,13 +118,11 @@ public class Alquiler implements Serializable {
 
     public Alquiler addJuegos(Juego juego) {
         this.juegos.add(juego);
-        juego.getAlquilers().add(this);
         return this;
     }
 
     public Alquiler removeJuegos(Juego juego) {
         this.juegos.remove(juego);
-        juego.getAlquilers().remove(this);
         return this;
     }
 
