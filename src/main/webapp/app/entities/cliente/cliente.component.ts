@@ -1,15 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { HttpHeaders, HttpResponse } from '@angular/common/http';
-import { ActivatedRoute, ParamMap, Router, Data } from '@angular/router';
-import { Subscription, combineLatest } from 'rxjs';
+import { HttpResponse } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
 import { JhiEventManager } from 'ng-jhipster';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ICliente } from 'app/shared/model/cliente.model';
-
-import { ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
 import { ClienteService } from './cliente.service';
-import { ClienteDeleteDialogComponent } from './cliente-delete-dialog.component';
 
 @Component({
   selector: 'jhi-cliente',
@@ -44,7 +40,7 @@ export class ClienteComponent implements OnInit, OnDestroy {
     }
   }
 
-  previousState() {
+  previousState(): void {
     this.mostrar = false;
   }
 

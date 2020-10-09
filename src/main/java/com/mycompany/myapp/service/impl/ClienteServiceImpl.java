@@ -62,7 +62,7 @@ public class ClienteServiceImpl implements ClienteService {
     @Transactional(readOnly = true)
     public Optional<ClienteDTO> findOneByCedula(String cedula){
         log.debug("Request to get Cliente by cedula: {}", cedula);
-        return clienteRepository.findByCedula(cedula)
+        return clienteRepository.findOneByCedula(cedula)
             .map(clienteMapper::toDto);
     }
     @Override

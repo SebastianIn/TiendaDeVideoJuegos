@@ -12,5 +12,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
-    Optional<Cliente> findByCedula(String cedula); 
+    Optional<Cliente> findOneByCedula(String cedula); 
 }
