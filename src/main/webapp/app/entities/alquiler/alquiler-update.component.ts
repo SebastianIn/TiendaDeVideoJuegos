@@ -23,12 +23,14 @@ export class AlquilerUpdateComponent implements OnInit {
   clientes: ICliente[] = [];
   juegos: IJuego[] = [];
   fechaDp: any;
+  fechaDeEntregaDp: any;
 
   editForm = this.fb.group({
     id: [],
     fecha: [],
     monto: [],
     rangoEdadAlcomprar: [],
+    fechaDeEntrega: [],
     clienteId: [],
     juegos: [],
   });
@@ -57,6 +59,7 @@ export class AlquilerUpdateComponent implements OnInit {
       fecha: alquiler.fecha,
       monto: alquiler.monto,
       rangoEdadAlcomprar: alquiler.rangoEdadAlcomprar,
+      fechaDeEntrega: alquiler.fechaDeEntrega,
       clienteId: alquiler.clienteId,
       juegos: alquiler.juegos,
     });
@@ -83,6 +86,7 @@ export class AlquilerUpdateComponent implements OnInit {
       fecha: this.editForm.get(['fecha'])!.value,
       monto: this.editForm.get(['monto'])!.value,
       rangoEdadAlcomprar: this.editForm.get(['rangoEdadAlcomprar'])!.value,
+      fechaDeEntrega: this.editForm.get(['fechaDeEntrega'])!.value,
       clienteId: this.editForm.get(['clienteId'])!.value,
       juegos: this.editForm.get(['juegos'])!.value,
     };

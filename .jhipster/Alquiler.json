@@ -30,6 +30,10 @@
     {
       "fieldName": "rangoEdadAlcomprar",
       "fieldType": "Integer"
+    },
+    {
+      "fieldName": "fechaDeEntrega",
+      "fieldType": "LocalDate"
     }
   ],
   "changelogDate": "20201009020708",

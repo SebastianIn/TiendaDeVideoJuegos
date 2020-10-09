@@ -19,6 +19,7 @@
       "fecha": "Fecha",
       "monto": "Monto",
       "rangoEdadAlcomprar": "Rango Edad Alcomprar",
+      "fechaDeEntrega": "Fecha De Entrega",
       "cliente": "Cliente",
       "juegos": "Juegos"
     }

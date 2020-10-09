@@ -24,7 +24,7 @@ describe('Service Tests', () => {
       httpMock = injector.get(HttpTestingController);
       currentDate = moment();
 
-      elemDefault = new Alquiler(0, currentDate, 0, 0);
+      elemDefault = new Alquiler(0, currentDate, 0, 0, currentDate);
     });
 
     describe('Service methods', () => {
@@ -32,6 +32,7 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             fecha: currentDate.format(DATE_FORMAT),
+            fechaDeEntrega: currentDate.format(DATE_FORMAT),
           },
           elemDefault
         );
@@ -48,6 +49,7 @@ describe('Service Tests', () => {
           {
             id: 0,
             fecha: currentDate.format(DATE_FORMAT),
+            fechaDeEntrega: currentDate.format(DATE_FORMAT),
           },
           elemDefault
         );
@@ -55,6 +57,7 @@ describe('Service Tests', () => {
         const expected = Object.assign(
           {
             fecha: currentDate,
+            fechaDeEntrega: currentDate,
           },
           returnedFromService
         );
@@ -72,6 +75,7 @@ describe('Service Tests', () => {
             fecha: currentDate.format(DATE_FORMAT),
             monto: 1,
             rangoEdadAlcomprar: 1,
+            fechaDeEntrega: currentDate.format(DATE_FORMAT),
           },
           elemDefault
         );
@@ -79,6 +83,7 @@ describe('Service Tests', () => {
         const expected = Object.assign(
           {
             fecha: currentDate,
+            fechaDeEntrega: currentDate,
           },
           returnedFromService
         );
@@ -96,6 +101,7 @@ describe('Service Tests', () => {
             fecha: currentDate.format(DATE_FORMAT),
             monto: 1,
             rangoEdadAlcomprar: 1,
+            fechaDeEntrega: currentDate.format(DATE_FORMAT),
           },
           elemDefault
         );
@@ -103,6 +109,7 @@ describe('Service Tests', () => {
         const expected = Object.assign(
           {
             fecha: currentDate,
+            fechaDeEntrega: currentDate,
           },
           returnedFromService
         );

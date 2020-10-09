@@ -35,6 +35,9 @@ public class Alquiler implements Serializable {
     @Column(name = "rango_edad_alcomprar")
     private Integer rangoEdadAlcomprar;
 
+    @Column(name = "fecha_de_entrega")
+    private LocalDate fechaDeEntrega;
+
     @ManyToOne
     @JsonIgnoreProperties(value = "alquilers", allowSetters = true)
     private Cliente cliente;
@@ -92,6 +95,19 @@ public class Alquiler implements Serializable {
 
     public void setRangoEdadAlcomprar(Integer rangoEdadAlcomprar) {
         this.rangoEdadAlcomprar = rangoEdadAlcomprar;
+    }
+
+    public LocalDate getFechaDeEntrega() {
+        return fechaDeEntrega;
+    }
+
+    public Alquiler fechaDeEntrega(LocalDate fechaDeEntrega) {
+        this.fechaDeEntrega = fechaDeEntrega;
+        return this;
+    }
+
+    public void setFechaDeEntrega(LocalDate fechaDeEntrega) {
+        this.fechaDeEntrega = fechaDeEntrega;
     }
 
     public Cliente getCliente() {
@@ -155,6 +171,7 @@ public class Alquiler implements Serializable {
             ", fecha='" + getFecha() + "'" +
             ", monto=" + getMonto() +
             ", rangoEdadAlcomprar=" + getRangoEdadAlcomprar() +
+            ", fechaDeEntrega='" + getFechaDeEntrega() + "'" +
             "}";
     }
 }

@@ -26,6 +26,7 @@
                     <th scope="col"  jhiSortBy="fecha"><span jhiTranslate="tIendaDeVideoJuegosApp.alquiler.fecha">Fecha</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="monto"><span jhiTranslate="tIendaDeVideoJuegosApp.alquiler.monto">Monto</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="rangoEdadAlcomprar"><span jhiTranslate="tIendaDeVideoJuegosApp.alquiler.rangoEdadAlcomprar">Rango Edad Alcomprar</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fechaDeEntrega"><span jhiTranslate="tIendaDeVideoJuegosApp.alquiler.fechaDeEntrega">Fecha De Entrega</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="clienteCedula"><span jhiTranslate="tIendaDeVideoJuegosApp.alquiler.cliente">Cliente</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
@@ -36,6 +37,7 @@
                     <td>{{ alquiler.fecha | date:'mediumDate' }}</td>
                     <td>{{ alquiler.monto }}</td>
                     <td>{{ alquiler.rangoEdadAlcomprar }}</td>
+                    <td>{{ alquiler.fechaDeEntrega | date:'mediumDate' }}</td>
                     <td>
                         <div *ngIf="alquiler.clienteId">
                             <a [routerLink]="['/cliente', alquiler.clienteId , 'view']" >{{ alquiler.clienteCedula }}</a>

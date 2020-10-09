@@ -18,6 +18,8 @@ public class AlquilerDTO implements Serializable {
 
     private Integer rangoEdadAlcomprar;
 
+    private LocalDate fechaDeEntrega;
+
 
     private Long clienteId;
 
@@ -54,6 +56,14 @@ public class AlquilerDTO implements Serializable {
 
     public void setRangoEdadAlcomprar(Integer rangoEdadAlcomprar) {
         this.rangoEdadAlcomprar = rangoEdadAlcomprar;
+    }
+
+    public LocalDate getFechaDeEntrega() {
+        return fechaDeEntrega;
+    }
+
+    public void setFechaDeEntrega(LocalDate fechaDeEntrega) {
+        this.fechaDeEntrega = fechaDeEntrega;
     }
 
     public Long getClienteId() {
@@ -105,6 +115,7 @@ public class AlquilerDTO implements Serializable {
             ", fecha='" + getFecha() + "'" +
             ", monto=" + getMonto() +
             ", rangoEdadAlcomprar=" + getRangoEdadAlcomprar() +
+            ", fechaDeEntrega='" + getFechaDeEntrega() + "'" +
             ", clienteId=" + getClienteId() +
             ", clienteCedula='" + getClienteCedula() + "'" +
             ", juegos='" + getJuegos() + "'" +

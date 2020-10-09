@@ -51,6 +51,9 @@ public class AlquilerResourceIT {
     private static final Integer DEFAULT_RANGO_EDAD_ALCOMPRAR = 1;
     private static final Integer UPDATED_RANGO_EDAD_ALCOMPRAR = 2;
 
+    private static final LocalDate DEFAULT_FECHA_DE_ENTREGA = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_FECHA_DE_ENTREGA = LocalDate.now(ZoneId.systemDefault());
+
     @Autowired
     private AlquilerRepository alquilerRepository;
 
@@ -84,7 +87,8 @@ public class AlquilerResourceIT {
         Alquiler alquiler = new Alquiler()
             .fecha(DEFAULT_FECHA)
             .monto(DEFAULT_MONTO)
-            .rangoEdadAlcomprar(DEFAULT_RANGO_EDAD_ALCOMPRAR);
+            .rangoEdadAlcomprar(DEFAULT_RANGO_EDAD_ALCOMPRAR)
+            .fechaDeEntrega(DEFAULT_FECHA_DE_ENTREGA);
         return alquiler;
     }
     /**
@@ -97,7 +101,8 @@ public class AlquilerResourceIT {
         Alquiler alquiler = new Alquiler()
             .fecha(UPDATED_FECHA)
             .monto(UPDATED_MONTO)
-            .rangoEdadAlcomprar(UPDATED_RANGO_EDAD_ALCOMPRAR);
+            .rangoEdadAlcomprar(UPDATED_RANGO_EDAD_ALCOMPRAR)
+            .fechaDeEntrega(UPDATED_FECHA_DE_ENTREGA);
         return alquiler;
     }
 
@@ -124,6 +129,7 @@ public class AlquilerResourceIT {
         assertThat(testAlquiler.getFecha()).isEqualTo(DEFAULT_FECHA);
         assertThat(testAlquiler.getMonto()).isEqualTo(DEFAULT_MONTO);
         assertThat(testAlquiler.getRangoEdadAlcomprar()).isEqualTo(DEFAULT_RANGO_EDAD_ALCOMPRAR);
+        assertThat(testAlquiler.getFechaDeEntrega()).isEqualTo(DEFAULT_FECHA_DE_ENTREGA);
     }
 
     @Test
@@ -160,7 +166,8 @@ public class AlquilerResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(alquiler.getId().intValue())))
             .andExpect(jsonPath("$.[*].fecha").value(hasItem(DEFAULT_FECHA.toString())))
             .andExpect(jsonPath("$.[*].monto").value(hasItem(DEFAULT_MONTO)))
-            .andExpect(jsonPath("$.[*].rangoEdadAlcomprar").value(hasItem(DEFAULT_RANGO_EDAD_ALCOMPRAR)));
+            .andExpect(jsonPath("$.[*].rangoEdadAlcomprar").value(hasItem(DEFAULT_RANGO_EDAD_ALCOMPRAR)))
+            .andExpect(jsonPath("$.[*].fechaDeEntrega").value(hasItem(DEFAULT_FECHA_DE_ENTREGA.toString())));
     }
     
     @SuppressWarnings({"unchecked"})
@@ -196,7 +203,8 @@ public class AlquilerResourceIT {
             .andExpect(jsonPath("$.id").value(alquiler.getId().intValue()))
             .andExpect(jsonPath("$.fecha").value(DEFAULT_FECHA.toString()))
             .andExpect(jsonPath("$.monto").value(DEFAULT_MONTO))
-            .andExpect(jsonPath("$.rangoEdadAlcomprar").value(DEFAULT_RANGO_EDAD_ALCOMPRAR));
+            .andExpect(jsonPath("$.rangoEdadAlcomprar").value(DEFAULT_RANGO_EDAD_ALCOMPRAR))
+            .andExpect(jsonPath("$.fechaDeEntrega").value(DEFAULT_FECHA_DE_ENTREGA.toString()));
     }
     @Test
     @Transactional
@@ -221,7 +229,8 @@ public class AlquilerResourceIT {
         updatedAlquiler
             .fecha(UPDATED_FECHA)
             .monto(UPDATED_MONTO)
-            .rangoEdadAlcomprar(UPDATED_RANGO_EDAD_ALCOMPRAR);
+            .rangoEdadAlcomprar(UPDATED_RANGO_EDAD_ALCOMPRAR)
+            .fechaDeEntrega(UPDATED_FECHA_DE_ENTREGA);
         AlquilerDTO alquilerDTO = alquilerMapper.toDto(updatedAlquiler);
 
         restAlquilerMockMvc.perform(put("/api/alquilers")
@@ -236,6 +245,7 @@ public class AlquilerResourceIT {
         assertThat(testAlquiler.getFecha()).isEqualTo(UPDATED_FECHA);
         assertThat(testAlquiler.getMonto()).isEqualTo(UPDATED_MONTO);
         assertThat(testAlquiler.getRangoEdadAlcomprar()).isEqualTo(UPDATED_RANGO_EDAD_ALCOMPRAR);
+        assertThat(testAlquiler.getFechaDeEntrega()).isEqualTo(UPDATED_FECHA_DE_ENTREGA);
     }
 
     @Test

@@ -6,6 +6,7 @@ export interface IAlquiler {
   fecha?: Moment;
   monto?: number;
   rangoEdadAlcomprar?: number;
+  fechaDeEntrega?: Moment;
   clienteCedula?: string;
   clienteId?: number;
   juegos?: IJuego[];
@@ -17,6 +18,7 @@ export class Alquiler implements IAlquiler {
     public fecha?: Moment,
     public monto?: number,
     public rangoEdadAlcomprar?: number,
+    public fechaDeEntrega?: Moment,
     public clienteCedula?: string,
     public clienteId?: number,
     public juegos?: IJuego[]

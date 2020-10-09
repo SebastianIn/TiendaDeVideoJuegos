@@ -34,6 +34,16 @@
                 </div>
 
                 <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="tIendaDeVideoJuegosApp.alquiler.fechaDeEntrega" for="field_fechaDeEntrega">Fecha De Entrega</label>
+                    <div class="input-group">
+                        <input id="field_fechaDeEntrega" type="text" class="form-control" name="fechaDeEntrega" ngbDatepicker #fechaDeEntregaDp="ngbDatepicker" formControlName="fechaDeEntrega"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaDeEntregaDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label class="form-control-label" jhiTranslate="tIendaDeVideoJuegosApp.alquiler.cliente" for="field_cliente">Cliente</label>
                     <select class="form-control" id="field_cliente" name="cliente" formControlName="clienteId">
                         <option [ngValue]="null"></option>

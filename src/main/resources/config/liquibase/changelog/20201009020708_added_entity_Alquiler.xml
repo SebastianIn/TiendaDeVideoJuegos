@@ -24,6 +24,9 @@
             <column name="rango_edad_alcomprar" type="integer">
                 <constraints nullable="true" />
             </column>
+            <column name="fecha_de_entrega" type="date">
+                <constraints nullable="true" />
+            </column>
             <column name="cliente_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -64,6 +67,7 @@
             <column name="fecha" type="date"/>
             <column name="monto" type="numeric"/>
             <column name="rango_edad_alcomprar" type="numeric"/>
+            <column name="fecha_de_entrega" type="date"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

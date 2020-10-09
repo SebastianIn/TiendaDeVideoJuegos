@@ -52,6 +52,8 @@ export class AlquilerService {
   protected convertDateFromClient(alquiler: IAlquiler): IAlquiler {
     const copy: IAlquiler = Object.assign({}, alquiler, {
       fecha: alquiler.fecha && alquiler.fecha.isValid() ? alquiler.fecha.format(DATE_FORMAT) : undefined,
+      fechaDeEntrega:
+        alquiler.fechaDeEntrega && alquiler.fechaDeEntrega.isValid() ? alquiler.fechaDeEntrega.format(DATE_FORMAT) : undefined,
     });
     return copy;
   }
@@ -59,6 +61,7 @@ export class AlquilerService {
   protected convertDateFromServer(res: EntityResponseType): EntityResponseType {
     if (res.body) {
       res.body.fecha = res.body.fecha ? moment(res.body.fecha) : undefined;
+      res.body.fechaDeEntrega = res.body.fechaDeEntrega ? moment(res.body.fechaDeEntrega) : undefined;
     }
     return res;
   }
@@ -67,6 +70,7 @@ export class AlquilerService {
     if (res.body) {
       res.body.forEach((alquiler: IAlquiler) => {
         alquiler.fecha = alquiler.fecha ? moment(alquiler.fecha) : undefined;
+        alquiler.fechaDeEntrega = alquiler.fechaDeEntrega ? moment(alquiler.fechaDeEntrega) : undefined;
       });
     }
     return res;
